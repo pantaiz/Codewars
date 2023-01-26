@@ -4,7 +4,6 @@ function decomp(a) {
         n = a
         ;
         let divisor = 2;
-
         while (n >= 2) {
 
             if (n % divisor == 0) {
@@ -15,7 +14,6 @@ function decomp(a) {
             }
         }
     }
-    //Получили массив с простыми множителями
     let counter = 1;
     let outputString = "";
     factors.sort((a, b) => a - b)
@@ -32,10 +30,7 @@ function decomp(a) {
             } else {
                 outputString += factors[i] + " * "
             }
-
         }
-
     }
     return outputString.slice(0, -3);
-
 }
