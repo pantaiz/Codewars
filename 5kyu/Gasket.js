@@ -1,21 +1,18 @@
-
-const Gasket = (n) => {
-let print=[]
-    let rowsLenght=1
-    let rows=2**n
-    let simbol=""
-    for (let i = 0; i <rows ; i++) {
-
-       for (let j = 0; j <rowsLenght ; j++) {
-           simbol+="L"
-
-        }
-        rowsLenght++
-
-        print.push(simbol)
-
+function sierpinski(n) {
+    if (n === 0) {
+        return 'L';
     }
-    return print
+    let tri = sierpinski(n - 1);
+
+    let triRows = tri.split('\n');
+    let gap = 2 * triRows.length - 1;
+    let arr = triRows.reduce((arr, r) => {
+        arr.push(r + ' '.repeat(gap) + r);
+        gap -= 2;
+        return arr;
+    }, []);
+
+    return tri + '\n' + arr.join('\n')
 }
 
-console.log(Gasket(2))
+console.log(sierpinski(3))
