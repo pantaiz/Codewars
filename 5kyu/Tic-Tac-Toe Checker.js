@@ -24,3 +24,13 @@ function isSolved(board) {
     return 0
 
 }
+
+const STAGE_WIDTH=12
+const STAGE_HEIGHT=12
+
+const createStage = () => {return(
+    Array.from(Array(STAGE_HEIGHT),()=>{
+        new Array(STAGE_WIDTH).fill([0,'clear'])
+    }))
+}
+console.log(createStage())
