@@ -4,7 +4,7 @@ const reverseNumber = (str) =>  {
     let maxLength = 0;
 
     for(let i = 0; i < str.length; i++) {
-        if(str[i] === '(') {
+        if(str[i] === '0') {
             stack.push(i);
         } else if(str[i] === ')') {
             if(stack.length === 0) {
@@ -17,4 +17,4 @@ const reverseNumber = (str) =>  {
     }
 
     return maxLength;
-}*/
+}
